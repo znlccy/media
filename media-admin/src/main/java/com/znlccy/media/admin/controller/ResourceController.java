@@ -1,5 +1,11 @@
 package com.znlccy.media.admin.controller;
 
+import com.znlccy.media.core.model.Resource;
+import com.znlccy.media.core.service.IResouceService;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+
 /**
  * The type ResourceController
  *
@@ -10,5 +16,63 @@ package com.znlccy.media.admin.controller;
  * 版本号 			作者 			日期       				简介
  * 	1.0				chencongye		2019/3/12-23:14			create
  */
+@Controller
+@RequestMapping(value = "/resource")
 public class ResourceController {
+
+    /**
+     * 定义路径前缀
+     */
+    private static String PREFIX = "system/resource";
+
+    /**
+     * 依赖注入权限服务
+     */
+    private IResouceService resouceService;
+
+    /**
+     * 权限列表页
+     * @param model
+     * @return
+     */
+    @GetMapping(value = "/list")
+    public String resourceList(Model model) {
+        model.addAttribute("resourceList", "resourceList");
+        return PREFIX + "/list.html";
+    }
+
+    /**
+     * 权限添加页
+     * @param resource
+     * @param model
+     * @return
+     */
+    @PostMapping(value = "/add")
+    public String resourceAdd(@RequestBody Resource resource, Model model) {
+        model.addAttribute("resource", resource);
+        return PREFIX + "/add.html";
+    }
+
+    /**
+     * 权限编辑页
+     * @param resourceId
+     * @param model
+     * @return
+     */
+    @PutMapping(value = "/edit/{resourceId}")
+    public String resourceEdit(@PathVariable Long resourceId, Model model) {
+        model.addAttribute("resource","resource");
+        return PREFIX + "/edit.html";
+    }
+
+    /**
+     * 权限详情
+     * @param resourceId
+     * @param model
+     * @return
+     */
+    public String resourceDetail(@PathVariable Long resourceId, Model model) {
+        model.addAttribute("resource", "resource");
+        return PREFIX + "/detail.html";
+    }
 }

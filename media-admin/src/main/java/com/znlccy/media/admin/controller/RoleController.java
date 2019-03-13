@@ -1,12 +1,12 @@
 package com.znlccy.media.admin.controller;
 
+import com.znlccy.media.core.model.Role;
 import com.znlccy.media.core.service.IRoleService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * The type RoleController
@@ -26,7 +26,7 @@ public class RoleController {
     /**
      * 定义路径前缀
      */
-    private static final String PREFIX = "/system/role/";
+    private static final String PREFIX = "system/role";
 
     /**
      * 依赖注入角色服务
@@ -35,12 +35,50 @@ public class RoleController {
     private IRoleService roleService;
 
     /**
-     * 权限列表
+     * 角色列表页
+     * @param model
      * @return
      */
     @GetMapping(value = "/list")
     public String roleList(Model model) {
 
-        return PREFIX + "list";
+        model.addAttribute("roleList", "roleList");
+
+        return PREFIX + "/list.html";
+    }
+
+    /**
+     * 角色添加页
+     * @param role
+     * @param model
+     * @return
+     */
+    @PostMapping(value = "/add")
+    public String roleAdd(@RequestBody Role role, Model model) {
+
+        model.addAttribute("role", role);
+        return PREFIX + "/add.html";
+    }
+
+    /**
+     * 角色编辑页
+     * @param roleId
+     * @param model
+     * @return
+     */
+    @PutMapping(value = "/edit/{roleId}")
+    public String roleEdit(@PathVariable Long roleId, Model model) {
+        return PREFIX + "/edit.html";
+    }
+
+    /**
+     * 角色详情页
+     * @param roleId
+     * @param model
+     * @return
+     */
+    @GetMapping(value = "/detail/{roleId}")
+    public String roleDetail(@PathVariable Long roleId, Model model) {
+        return PREFIX + "/detail.html";
     }
 }

@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @MapperScan("com.znlccy.media.core.mapper")
-@ComponentScan(basePackages = {"com.znlccy.media.core"})
+@ComponentScan(basePackages = {"com.znlccy.media.core", "com.znlccy.media.admin"})
 public class MediaAdminApplication {
 
     public static void main(String[] args) {
