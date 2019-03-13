@@ -16,6 +16,8 @@
     <description>Media Advertise Index Jar Package</description>
 
     <dependencies>
+
+        <!-- 导入Media-Core依赖 -->
         <dependency>
             <groupId>com.znlccy</groupId>
             <artifactId>media-core</artifactId>
@@ -25,6 +27,7 @@
     </dependencies>
 
     <build>
+        <finalName>${project.artifactId}-${project.version}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

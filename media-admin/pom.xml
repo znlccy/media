@@ -16,6 +16,8 @@
     <description>Demo project for Spring Boot</description>
 
     <dependencies>
+
+        <!-- 导入Media-Core依赖 -->
         <dependency>
             <groupId>com.znlccy</groupId>
             <artifactId>media-core</artifactId>
