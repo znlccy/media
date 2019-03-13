@@ -12,6 +12,10 @@ package com.znlccy.media.core.annotation;
  */
 public @interface Permission {
 
+    /**
+     * 权限值
+     * @return
+     */
     String value() default "";
 
 }
