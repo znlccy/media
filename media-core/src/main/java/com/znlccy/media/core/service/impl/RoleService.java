@@ -1,7 +1,10 @@
 package com.znlccy.media.core.service.impl;
 
+import com.znlccy.media.core.model.Role;
 import com.znlccy.media.core.service.IRoleService;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * The type RoleService
@@ -16,4 +19,53 @@ import org.springframework.stereotype.Service;
 @Service
 public class RoleService implements IRoleService {
 
+    @Override
+    public int deleteById(Long id) {
+        return 0;
+    }
+
+    @Override
+    public int insert(Role role) {
+        return 0;
+    }
+
+    @Override
+    public int insertSelective(Role role) {
+        return 0;
+    }
+
+    @Override
+    public Role selectById(Long id) {
+        return null;
+    }
+
+    @Override
+    public int updateByIdSelective(Role role) {
+        return 0;
+    }
+
+    @Override
+    public int updateById(Role role) {
+        return 0;
+    }
+
+    @Override
+    public List<Role> findAll() {
+        return null;
+    }
+
+    @Override
+    public List<Role> findAllByPage(int limit, int offset) {
+        return null;
+    }
+
+    @Override
+    public int batchDeleteByIds(List<Long> ids) {
+        return 0;
+    }
+
+    @Override
+    public int batchUpdateByIds(List<Long> ids) {
+        return 0;
+    }
 }

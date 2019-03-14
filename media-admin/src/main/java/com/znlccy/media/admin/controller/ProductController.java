@@ -1,7 +1,7 @@
 package com.znlccy.media.admin.controller;
 
 import com.znlccy.media.core.model.Product;
-import com.znlccy.media.core.service.IProduceService;
+import com.znlccy.media.core.service.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,7 +30,7 @@ public class ProductController {
      * 自动依赖注入产品服务
      */
     @Autowired
-    private IProduceService produceService;
+    private IProductService produceService;
 
     /**
      * 产品列表页

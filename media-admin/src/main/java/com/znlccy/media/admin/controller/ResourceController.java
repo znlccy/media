@@ -1,7 +1,7 @@
 package com.znlccy.media.admin.controller;
 
 import com.znlccy.media.core.model.Resource;
-import com.znlccy.media.core.service.IResouceService;
+import com.znlccy.media.core.service.IResourceService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -28,7 +28,7 @@ public class ResourceController {
     /**
      * 依赖注入权限服务
      */
-    private IResouceService resouceService;
+    private IResourceService resouceService;
 
     /**
      * 权限列表页

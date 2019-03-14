@@ -8,5 +8,6 @@ spring:
     username: root
     password: root
 
-
-
+#mybatis:
+  #mapper-locations: com.znlccy.media.core.mapping
+  #type-aliases-package: com.znlccy.media.core.model

@@ -1,5 +1,7 @@
 package com.znlccy.media.core.util;
 
+import java.util.Date;
+
 /**
  * The type DateUtil
  *
@@ -12,5 +14,11 @@ package com.znlccy.media.core.util;
  */
 public class DateUtil {
 
+    public static Date stringToDate(String date) {
+        return new Date();
+    }
 
+    public static String dateToString(Date string) {
+        return "String";
+    }
 }
