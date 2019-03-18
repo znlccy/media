@@ -1,6 +1,7 @@
 package com.znlccy.media.core.service;
 
 import com.znlccy.media.core.model.Carousel;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -15,6 +16,13 @@ import java.util.List;
  * 	1.0				chencongye		2019/3/14-19:21			create
  */
 public interface ICarouseService {
+
+    /**
+     * 保存轮播
+     * @param carousel
+     * @return
+     */
+    int saveCarousel(@Param("carousel")Carousel carousel);
 
     /**
      * 通过主键删除

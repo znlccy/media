@@ -1,5 +1,6 @@
 package com.znlccy.media.core.mapper;
 
+import com.znlccy.media.core.model.Carousel;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -17,11 +18,19 @@ import org.apache.ibatis.annotations.Param;
 public interface CarouselMapper {
 
     /**
+     * 保存轮播
+     * @param carousel
+     * @return
+     */
+    int saveCarousel(@Param("carousel")Carousel carousel);
+
+    /**
      * 通过主键删除
      * @param id
      * @return
      */
     /*@Delete("delete from tb_carousel where id = #{id}")*/
     int deleteById(@Param("id") Long id);
+
 
 }

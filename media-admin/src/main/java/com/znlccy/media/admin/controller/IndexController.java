@@ -18,7 +18,7 @@ public class IndexController {
 
     @GetMapping(value = "/")
     public String login() {
-        return "/login.html";
+        return "login.html";
     }
 
 }

@@ -2,6 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.znlccy.media.core.mapper.CarouselMapper">
 
+    <!-- 定义数据表字段属性 开始 -->
     <resultMap id="BaseResultMap" type="com.znlccy.media.core.model.Carousel">
         <id column="id" property="id" jdbcType="BIGINT" />
         <result column="description" property="description" jdbcType="VARCHAR" />
@@ -11,11 +12,24 @@
         <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
         <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
     </resultMap>
+    <!-- 定义数据表字段属性 结束 -->
 
+    <!-- 定义返回基本列 开始 -->
     <sql id="Base_Column_List">
         id, description, url, path, status, create_time, update_time
     </sql>
-
+    <!-- 定义返回基本列 结束 -->
+    
+    <!-- 定义添加轮播 开始 -->
+    <insert id="saveCarousel" parameterType="com.znlccy.media.core.model.Carousel">
+        INSERT INTO
+          tb_carousel
+        VALUES
+          (#{carousel.description}, #{carousel.url}, #{carousel.url})
+    </insert>
+    <!-- 定义添加轮播 结束 -->
+    
+    <!-- 通过主键删除轮播 开始 -->
     <delete id="deleteById" parameterType="java.lang.Long">
         DELETE
         FROM
@@ -23,4 +37,5 @@
         WHERE
           id = #{id}
     </delete>
+    <!-- 通过主键删除轮播 结束 -->
 </mapper>

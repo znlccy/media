@@ -1,7 +1,9 @@
+# 服务配置
 server:
   port: 8083
 
 spring:
+  # MySQL配置
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/db_media?serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true
@@ -9,6 +11,12 @@ spring:
     password: root
     type: com.alibaba.druid.pool.DruidDataSource
 
+  # thymeleaf配置
+  thymeleaf:
+    cache: false
+    mode: LEGACYHTML5
+
+# MyBatis配置
 mybatis:
   type-aliases-package: com.znlccy.media.core.model
   mapper-locations: classpath:/mappers/*.xml

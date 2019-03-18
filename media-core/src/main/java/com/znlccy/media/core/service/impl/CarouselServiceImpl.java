@@ -1,6 +1,7 @@
 package com.znlccy.media.core.service.impl;
 
 import com.znlccy.media.core.mapper.CarouselMapper;
+import com.znlccy.media.core.model.Carousel;
 import com.znlccy.media.core.service.ICarouseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,6 +21,11 @@ public class CarouselServiceImpl implements ICarouseService {
 
     @Autowired
     private CarouselMapper carouselMapper;
+
+    @Override
+    public int saveCarousel(Carousel carousel) {
+        return 0;
+    }
 
     /**
      * 通过主键

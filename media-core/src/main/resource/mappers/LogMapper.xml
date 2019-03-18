@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.znlccy.media.core.mapper.LogMapper">
+
+    <!-- 定义数据表字段属性 开始 -->
+    <resultMap id="BaseResultMap" type="com.znlccy.media.core.model.Log">
+        <id column="id" property="id" jdbcType="BIGINT" />
+        <result column="username" property="username" jdbcType="VARCHAR" />
+        <result column="operation" property="operation" jdbcType="VARCHAR" />
+        <result column="method" property="method" jdbcType="VARCHAR" />
+        <result column="params" property="params" jdbcType="VARCHAR" />
+        <result column="ip" property="id" jdbcType="VARCHAR" />
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    </resultMap>
+    <!-- 定义数据表字段属性 结束 -->
+
+    <!-- 定义返回基本列 开始 -->
+    <sql id="Base_Column_List">
+        id, username, operation, method, params, ip, create_time
+    </sql>
+    <!-- 定义返回基本列 结束 -->
+
+    <!-- 添加日志 开始 -->
+    <insert id="saveLog" parameterType="com.znlccy.media.core.model.Log">
+        INSERT INTO
+          tb_log
+        VALUES
+
+    </insert>
+    <!-- 添加日志 结束 -->
+
+    <!-- 删除日志 开始 -->
+    <delete id="deleteById" parameterType="java.lang.Long">
+        DELETE
+        FROM
+          tb_log
+        WHERE
+          id = #{id}
+    </delete>
+    <!-- 删除日志 结束 -->
+</mapper>
