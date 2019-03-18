@@ -41,6 +41,41 @@ public class Machine implements Serializable {
     private String media;
 
     /**
+     * 机台地址
+     */
+    private String location;
+
+    /**
+     * 机台场所
+     */
+    private String place;
+
+    /**
+     * 机台点位
+     */
+    private String position;
+
+    /**
+     * GPS1
+     */
+    private String gpsOne;
+
+    /**
+     * GPS2
+     */
+    private String gpsTwo;
+
+    /**
+     * 机台序列号
+     */
+    private String machineSerialize;
+
+    /**
+     * 填表人
+     */
+    private String fillMan;
+
+    /**
      * 创建时间
      */
     private Date createTime;

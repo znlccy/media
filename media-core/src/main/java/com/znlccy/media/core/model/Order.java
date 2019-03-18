@@ -3,6 +3,8 @@ package com.znlccy.media.core.model;
 import lombok.Data;
 import lombok.ToString;
 
+import java.util.Date;
+
 /**
  * The type Order
  *
@@ -23,12 +25,28 @@ public class Order {
     private Long id;
 
     /**
-     * 产品名称
+     * 下单人员编号
      */
-    private String productName;
+    private Long orderClerkNumber;
 
     /**
-     * 机台名称
+     * 广告商编号
      */
-    private String machineName;
+    private Long advertiserNumber;
+
+    /**
+     * 产品编号
+     */
+    private Long productId;
+
+    /**
+     * 预计上刊时间
+     */
+    private Date expectedUpPublish;
+
+    /**
+     * 预计上刊时间
+     */
+    private Date expectedDownPublish;
+
 }

@@ -51,6 +51,11 @@ public class User implements Serializable {
     private String email;
 
     /**
+     * 角色
+     */
+    private String role;
+
+    /**
      * 登录时间
      */
     private Date loginTime;
