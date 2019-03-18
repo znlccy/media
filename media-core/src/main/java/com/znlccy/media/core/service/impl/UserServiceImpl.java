@@ -1,23 +1,23 @@
 package com.znlccy.media.core.service.impl;
 
-import com.znlccy.media.core.model.Machine;
-import com.znlccy.media.core.service.IMachineService;
+import com.znlccy.media.core.model.User;
+import com.znlccy.media.core.service.IUserService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 /**
- * The type MachineService 
+ * The type UserService
  *
- * FileName：MachineService.java
- * Description：	机台服务实现类
+ * FileName：UserService.java
+ * Description：	用户服务实现类
  *
  * History：
  * 版本号 			作者 			日期       				简介
- * 	1.0				chencongye		2019/3/12-23:19			create
+ * 	1.0				chencongye		2019/3/12-12:24			create
  */
 @Service
-public class MachineService implements IMachineService {
+public class UserServiceImpl implements IUserService {
 
     @Override
     public int deleteById(Long id) {
@@ -25,37 +25,37 @@ public class MachineService implements IMachineService {
     }
 
     @Override
-    public int insert(Machine machine) {
+    public int insert(User user) {
         return 0;
     }
 
     @Override
-    public int insertSelective(Machine machine) {
+    public int insertSelective(User user) {
         return 0;
     }
 
     @Override
-    public Machine selectById(Long id) {
+    public User selectById(Long id) {
         return null;
     }
 
     @Override
-    public int updateByIdSelective(Machine machine) {
+    public int updateByIdSelective(User user) {
         return 0;
     }
 
     @Override
-    public int updateById(Machine machine) {
+    public int updateById(User user) {
         return 0;
     }
 
     @Override
-    public List<Machine> findAll() {
+    public List<User> findAll() {
         return null;
     }
 
     @Override
-    public List<Machine> findAllByPage(int limit, int offset) {
+    public List<User> findAllByPage(int limit, int offset) {
         return null;
     }
 

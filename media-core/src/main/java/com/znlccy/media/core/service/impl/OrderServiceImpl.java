@@ -6,16 +6,16 @@ import com.znlccy.media.core.service.IOrderService;
 import java.util.List;
 
 /**
- * The type OrderService
+ * The type OrderServiceImpl
  *
- * FileName：OrderService.java
+ * FileName：OrderServiceImpl.java
  * Description：订单服务实现类
  *
  * History：
  * 版本号 			作者 			日期       				简介
  * 	1.0				chencongye		2019/3/14-19:28			create
  */
-public class OrderService implements IOrderService {
+public class OrderServiceImpl implements IOrderService {
 
     @Override
     public int deleteById(Long id) {

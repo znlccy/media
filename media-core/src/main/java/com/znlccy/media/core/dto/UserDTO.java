@@ -1,5 +1,7 @@
 package com.znlccy.media.core.dto;
 
+import lombok.Data;
+
 /**
  * The type UserDTO
  *
@@ -10,12 +12,13 @@ package com.znlccy.media.core.dto;
  * 版本号 			作者 			日期       				简介
  * 	1.0				chencongye		2019/3/14-17:51			create
  */
+@Data
 public class UserDTO {
 
     /**
      * 用户主键
      */
-    private Long id;
+    /*private Long id;*/
 
     /**
      * 用户姓名

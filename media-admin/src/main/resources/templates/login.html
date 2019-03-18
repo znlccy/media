@@ -18,16 +18,89 @@
     <!-- 导入Css文件结束 -->
 </head>
 <body class="app flex-row align-items-center">
-    <div class="container">
+    <div class="container layui-anim layui-anim-upbit">
         <div class="row justify-content-center">
-            <div class="col-md-9">
+            <div class="col-md-5">
                 <div class="card-group">
-                    <div class="card p-6">
-
+                    <div class="card p-4">
+                        <div class="card-body">
+                            <h2 class="text-center">登录</h2>
+                            <p class="text-center">登录您的账户</p>
+                            <div class="input-group mb-3">
+                                <span class="input-group-addon">
+                                    <i class="icon-user"></i>
+                                </span>
+                                <input type="text" id="username" name="username" class="form-control" placeholder="用户名" />
+                            </div>
+                            <div class="input-group mb-4">
+                                <span class="input-group-addon">
+                                    <i class="icon-lock"></i>
+                                </span>
+                                <input type="password" id="password" name="password" class="form-control" placeholder="密码" />
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <button type="submit" id="login" onclick="login()" class="layui-btn layui-btn-normal">登录</button>
+                                </div>
+                                <div class="col-6 text-right">
+                                    <button type="button" id="forget" class="btn btn-link px-0">忘记密码?</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <!-- Bootstrap and necessary plugins -->
+    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/lib/popper.js/popper.min.js"></script>
+    <script type="text/javascript" src="/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/lib/layer/layer.js"></script>
+    <script type="text/javascript" src="/lib/js/ajaxUtils.js"></script>
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+        var error=/*[[${error}]]*/;//取值
+        /*]]>*/
+        if(error)
+        {
+            layer.alert(error, {icon: 0});
+        }
+    </script>
+    <script type="text/javascript">
+
+        function login() {
+            var username = JSON.stringify(trim($("#username").val()));
+            var password = JSON.stringify(trim($("#password").val()));
+
+            alert(username);
+
+            var data = {
+                "username": this.username,
+                "password": this.password
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "/user/login",
+                contentType: "application/json", //必须有
+                dataType: "json", //表示返回值类型，不必须
+                data: JSON.stringify({ 'username': 'foovalue', 'password': 'barvalue' }),  //相当于 //data: "{'str1':'foovalue', 'str2':'barvalue'}",
+                success: function (jsonResult) {
+                    alert(jsonResult);
+                }
+            });
+
+
+        }
+    </script>
+    <style>
+        .pro_name a{color: #4183c4;}
+        .osc_git_title{background-color: #fff;}
+        .osc_git_box{background-color: #fff;}
+        .osc_git_box{border-color: #E3E9ED;}
+        .osc_git_info{color: #666;}
+        .osc_git_main a{color: #9B9B9B;}
+    </style>
 </body>
 </html>

@@ -4,8 +4,7 @@ import com.znlccy.media.core.dto.UserDTO;
 import com.znlccy.media.core.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * The type UserController
@@ -19,10 +18,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 @RequestMapping(value = "/user")
+@CrossOrigin
 public class UserController {
 
     /**
-     * 定义
+     * 定义路径前缀
      */
     private static final String PREFIX = "/system/user";
 
@@ -36,8 +36,8 @@ public class UserController {
      * 用户列表页
      * @return
      */
+    @GetMapping(value = "/list")
     public String userList() {
-
         return PREFIX + "/list.html";
     }
 
@@ -48,6 +48,17 @@ public class UserController {
 
     public Object userDelete() {
         return null;
+    }
+
+    /**
+     *
+     * @return
+     */
+    @RequestMapping(value = "/login",method = RequestMethod.POST)
+    @ResponseBody
+    public String userLogin(@RequestBody UserDTO userDTO) {
+        System.out.println("用户名" + userDTO.getUsername());
+        return userDTO.getUsername();
     }
 
     /**

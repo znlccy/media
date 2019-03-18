@@ -17,7 +17,7 @@ import java.util.List;
  * 	1.0				chencongye		2019/3/12-23:18			create
  */
 @Service
-public class AdvertiseService implements IAdvertiseService {
+public class AdvertiseServiceImpl implements IAdvertiseService {
 
     /**
      * 通过主键删除广告

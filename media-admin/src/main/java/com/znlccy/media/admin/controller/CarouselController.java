@@ -1,5 +1,6 @@
 package com.znlccy.media.admin.controller;
 
+import com.znlccy.media.core.controller.BaseController;
 import com.znlccy.media.core.model.Carousel;
 import com.znlccy.media.core.service.ICarouseService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,7 @@ import org.springframework.web.bind.annotation.*;
  */
 @Controller
 @RequestMapping(value = "/carousel")
-public class CarouselController {
+public class CarouselController extends BaseController {
 
     /**
      * 定义路径前缀
@@ -32,22 +33,12 @@ public class CarouselController {
     @Autowired
     private ICarouseService carouseService;
 
-    /**
-     * 产品列表页
-     * @param model
-     * @return
-     */
-    @GetMapping(value = "/list")
-    public String carouselList(Model model) {
-        return PREFIX + "/list.html";
+    @DeleteMapping(value = "/delete/{id}")
+    @ResponseBody
+    public void deleteById(@PathVariable Long id) {
+        carouseService.deleteById(id);
     }
 
-    /**
-     * 产品添加页
-     * @param carousel
-     * @param model
-     * @return
-     */
     @PostMapping(value = "/add")
     public String carouselAdd(@RequestBody Carousel carousel, Model model) {
         return PREFIX + "/add.html";

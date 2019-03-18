@@ -8,4 +8,37 @@
     <button class="navbar-toggler sidebar-toggler d-lg-down-none" type="button">
         <span class="navbar-toggler-icon"></span>
     </button>
+
+    <!-- 子系统模块 开始 -->
+    <ul class="nav navbar-nav d-md-down-none">
+        <li class="nav-item px-3">
+            系统设置
+        </li>
+    </ul>
+    <!-- 子系统模块 结束 -->
+    <ul class="nav navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                <img src="img/avatars/6.jpg" class="img-avatar" alt="admin@bootstrapmaster.com"></img>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+                <!-- <div class="dropdown-header text-center">
+                     <strong>账户</strong>
+                 </div>
+                 <a class="dropdown-item" href="#"><i class="fa fa-envelope-o"></i> 短信息</a>
+                 <a class="dropdown-item" href="#"><i class="fa fa-comments"></i> 评论</a>-->
+                <div class="dropdown-header text-center">
+                    <strong>设置</strong>
+                </div>
+                <a class="dropdown-item" href="#"><i class="fa fa-user"></i> 个人信息</a>
+                <a class="dropdown-item" href="#"><i class="fa fa-wrench"></i> 系统设置</a>
+                <div class="divider"></div>
+                <!--<a class="dropdown-item" href="#"><i class="fa fa-shield"></i> 系统锁屏</a>-->
+                <a class="dropdown-item" href="/logout" target="_top"><i class="fa fa-lock"></i> 系统退出</a>
+            </div>
+        </li>
+    </ul>
+    <button class="navbar-toggler aside-menu-toggler" type="button">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 </header>

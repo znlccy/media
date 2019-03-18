@@ -1,23 +1,23 @@
 package com.znlccy.media.core.service.impl;
 
-import com.znlccy.media.core.model.User;
-import com.znlccy.media.core.service.IUserService;
+import com.znlccy.media.core.model.Role;
+import com.znlccy.media.core.service.IRoleService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 /**
- * The type UserService
+ * The type RoleService
  *
- * FileName：UserService.java
- * Description：	用户服务实现类
+ * FileName：RoleService.java
+ * Description：	角色服务实现类
  *
  * History：
  * 版本号 			作者 			日期       				简介
- * 	1.0				chencongye		2019/3/12-12:24			create
+ * 	1.0				chencongye		2019/3/12-23:20			create
  */
 @Service
-public class UserService implements IUserService {
+public class RoleServiceImpl implements IRoleService {
 
     @Override
     public int deleteById(Long id) {
@@ -25,37 +25,37 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public int insert(User user) {
+    public int insert(Role role) {
         return 0;
     }
 
     @Override
-    public int insertSelective(User user) {
+    public int insertSelective(Role role) {
         return 0;
     }
 
     @Override
-    public User selectById(Long id) {
+    public Role selectById(Long id) {
         return null;
     }
 
     @Override
-    public int updateByIdSelective(User user) {
+    public int updateByIdSelective(Role role) {
         return 0;
     }
 
     @Override
-    public int updateById(User user) {
+    public int updateById(Role role) {
         return 0;
     }
 
     @Override
-    public List<User> findAll() {
+    public List<Role> findAll() {
         return null;
     }
 
     @Override
-    public List<User> findAllByPage(int limit, int offset) {
+    public List<Role> findAllByPage(int limit, int offset) {
         return null;
     }
 

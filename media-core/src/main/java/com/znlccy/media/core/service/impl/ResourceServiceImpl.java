@@ -1,23 +1,23 @@
 package com.znlccy.media.core.service.impl;
 
-import com.znlccy.media.core.model.Product;
-import com.znlccy.media.core.service.IProductService;
+import com.znlccy.media.core.model.Resource;
+import com.znlccy.media.core.service.IResourceService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 /**
- * The type ProductService 
+ * The type ResourceService
  *
- * FileName：ProductService.java
- * Description：	产品服务实现类
+ * FileName：ResourceService.java
+ * Description：	资源服务实现类
  *
  * History：
  * 版本号 			作者 			日期       				简介
- * 	1.0				chencongye		2019/3/12-23:19			create
+ * 	1.0				chencongye		2019/3/12-23:20			create
  */
 @Service
-public class ProductService implements IProductService {
+public class ResourceServiceImpl implements IResourceService {
 
     @Override
     public int deleteById(Long id) {
@@ -25,37 +25,37 @@ public class ProductService implements IProductService {
     }
 
     @Override
-    public int insert(Product product) {
+    public int insert(Resource resource) {
         return 0;
     }
 
     @Override
-    public int insertSelective(Product product) {
+    public int insertSelective(Resource resource) {
         return 0;
     }
 
     @Override
-    public Product selectById(Long id) {
+    public Resource selectById(Long id) {
         return null;
     }
 
     @Override
-    public int updateByIdSelective(Product product) {
+    public int updateByIdSelective(Resource resource) {
         return 0;
     }
 
     @Override
-    public int updateById(Product product) {
+    public int updateById(Resource resource) {
         return 0;
     }
 
     @Override
-    public List<Product> findAll() {
+    public List<Resource> findAll() {
         return null;
     }
 
     @Override
-    public List<Product> findAllByPage(int limit, int offset) {
+    public List<Resource> findAllByPage(int limit, int offset) {
         return null;
     }
 

@@ -1,9 +1,16 @@
+# 配置服务器
 server:
+  # 配置服务器端口
   port: 8080
 
+# 配置数据库
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/db_media?serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true
     username: root
     password: root
+
+mybatis:
+  type-aliases-package: com.znlccy.media.core.model
+  mapper-locations: classpath:/mappers/*.xml

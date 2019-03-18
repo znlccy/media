@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
  * 	1.0				chencongye		2019/3/14-19:38			create
  */
 @Service
-public class UserRoleService {
+public class UserRoleServiceImpl {
 
 
 }

@@ -5,16 +5,16 @@ import com.znlccy.media.core.model.Role;
 import java.util.List;
 
 /**
- * The type RoleResourceService
+ * The type RoleResourceServiceImpl
  *
- * FileName：RoleResourceService.java
+ * FileName：RoleResourceServiceImpl.java
  * Description：角色权限服务接口
  *
  * History：
  * 版本号 			作者 			日期       				简介
  * 	1.0				chencongye		2019/3/14-19:27			create
  */
-public class RoleResourceService {
+public class RoleResourceServiceImpl {
 
     /*int deleteById(Long id);
 
