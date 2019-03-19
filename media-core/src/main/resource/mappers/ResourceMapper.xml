@@ -6,12 +6,12 @@
     <resultMap id="BaseResultMap" type="com.znlccy.media.core.model.Resource">
         <id column="id" property="id" jdbcType="BIGINT" />
         <result column="name" property="name" jdbcType="VARCHAR" />
-        <result column="type" property="type" jdbcType="INT" />
+        <result column="type" property="type" jdbcType="INTEGER" />
         <result column="parent_id" property="parentId" jdbcType="BIGINT" />
         <result column="url" property="url" jdbcType="VARCHAR" />
         <result column="icon" property="icon" jdbcType="VARCHAR" />
         <result column="permission" property="permission" jdbcType="VARCHAR" />
-        <result column="order" property="order" jdbcType="INT" />
+        <result column="order" property="order" jdbcType="INTEGER" />
         <result column="remark" property="remark" jdbcType="VARCHAR" />
         <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
         <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
@@ -23,4 +23,47 @@
         id, name, type, parent_id, url, icon, permission, order, remark, create_time, update_time
     </sql>
     <!-- 定义返回基本列 结束 -->
+
+    <!-- 添加资源 开始 -->
+    <insert id="saveResource" parameterType="com.znlccy.media.core.model.Resource">
+        INSERT INTO
+          tb_resource
+          (name, type, parent_id, url, icon, permission, order, remark, create_time, update_time)
+        VALUE
+          (#{name}, #{type}, #{parent_id}, #{url}, #{icon}, #{permission}, #{order}, #{remark}, #{create_time}, #{update_time})
+    </insert>
+    <!-- 添加资源 结束 -->
+
+    <!-- 删除资源 开始 -->
+    <delete id="deleteById" parameterType="java.lang.Long">
+        DELETE
+        FROM
+          tb_resource
+        WHERE
+          id = #{id}
+    </delete>
+    <!-- 删除资源 结束 -->
+
+    <!-- 更新资源 开始 -->
+    <update id="updateResource" parameterType="com.znlccy.media.core.model.Resource">
+        UPDATE
+          tb_resource
+        SET
+          name=#{name}, type=#{type}, parent_id=#{parent_id}, url=#{url}, icon=#{icon},
+          permission=#{permission}, order=#{order}, remark=#{remark}, update_time=#{update_time}
+      WHERE
+      id = #{id}
+    </update>
+    <!-- 更新资源 结束 -->
+
+    <!-- 查找资源 开始 -->
+    <select id="findById" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        SELECT
+          <include refid="Base_Colum_List" />
+        FROM
+          tb_resource
+        WHERE
+          id = #{id}
+    </select>
+    <!-- 查找资源 结束 -->
 </mapper>

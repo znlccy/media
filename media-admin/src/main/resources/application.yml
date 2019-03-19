@@ -1,6 +1,8 @@
 # 服务配置
 server:
   port: 8083
+  servlet:
+    context-path: /admin
 
 spring:
   # MySQL配置
@@ -10,6 +12,7 @@ spring:
     username: root
     password: root
     type: com.alibaba.druid.pool.DruidDataSource
+
 
   # thymeleaf配置
   thymeleaf:

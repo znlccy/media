@@ -24,7 +24,6 @@
     <insert id="saveLog" parameterType="com.znlccy.media.core.model.Log">
         INSERT INTO
           tb_log
-          (username, operation, method, params, ip, create_time)
         VALUE
           (#{username}, #{operation}, #{method}, #{params}, #{ip}, #{create_time})
     </insert>
