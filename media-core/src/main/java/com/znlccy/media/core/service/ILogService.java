@@ -1,5 +1,7 @@
 package com.znlccy.media.core.service;
 
+import com.znlccy.media.core.model.Log;
+
 /**
  * The type ILogService
  *
@@ -11,5 +13,26 @@ package com.znlccy.media.core.service;
  * 	1.0				chencongye		2019/3/14-22:31			create
  */
 public interface ILogService {
+
+    /**
+     * 添加日志
+     * @param log
+     * @return
+     */
+    int saveLog(Log log);
+
+    /**
+     * 删除日志
+     * @param id
+     * @return
+     */
+    int deleteById(Long id);
+
+    /**
+     * 查询日志
+     * @param id
+     * @return
+     */
+    Log findById(Long id);
 
 }

@@ -30,7 +30,7 @@ public interface UserMapper {
      * @param user
      * @return
      */
-    int insert(User user);
+    int saveUser(User user);
 
     /**
      * 通过所选筛选用户

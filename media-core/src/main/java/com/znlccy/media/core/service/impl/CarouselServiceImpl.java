@@ -5,6 +5,7 @@ import com.znlccy.media.core.model.Carousel;
 import com.znlccy.media.core.service.ICarouseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * The type CarouselService
@@ -22,6 +23,7 @@ public class CarouselServiceImpl implements ICarouseService {
     @Autowired
     private CarouselMapper carouselMapper;
 
+    @Transactional
     @Override
     public int saveCarousel(Carousel carousel) {
         return 0;
@@ -32,6 +34,7 @@ public class CarouselServiceImpl implements ICarouseService {
      * @param id
      * @return
      */
+    @Transactional
     @Override
     public int deleteById(Long id) {
         return carouselMapper.deleteById(id);

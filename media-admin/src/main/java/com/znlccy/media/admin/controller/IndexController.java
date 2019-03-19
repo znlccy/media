@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class IndexController {
 
-    @GetMapping(value = "/")
+    @GetMapping(value = "/admin")
     public String login() {
         return "login.html";
     }

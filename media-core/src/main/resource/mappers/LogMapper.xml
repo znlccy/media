@@ -24,8 +24,9 @@
     <insert id="saveLog" parameterType="com.znlccy.media.core.model.Log">
         INSERT INTO
           tb_log
-        VALUES
-
+          (username, operation, method, params, ip, create_time)
+        VALUE
+          (#{username}, #{operation}, #{method}, #{params}, #{ip}, #{create_time})
     </insert>
     <!-- 添加日志 结束 -->
 
@@ -38,4 +39,16 @@
           id = #{id}
     </delete>
     <!-- 删除日志 结束 -->
+
+    <!-- 查询日志 开始 -->
+    <select id="findById" parameterType="java.lang.String" resultMap="BaseResultMap">
+      SELECT
+        <include refid="Base_Column_List" />
+      FROM
+        tb_log
+      WHERE
+        id = #{id}
+    </select>
+    <!-- 查询日志 结束 -->
+
 </mapper>
