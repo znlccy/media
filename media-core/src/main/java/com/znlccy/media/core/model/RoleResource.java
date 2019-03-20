@@ -19,6 +19,9 @@ import java.io.Serializable;
 @ToString
 public class RoleResource implements Serializable {
 
+    /**
+     * 生成序列号
+     */
     private static final long serialVersionUID = -5749511827490544279L;
 
     /**

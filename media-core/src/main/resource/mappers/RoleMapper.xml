@@ -5,7 +5,62 @@
     <!-- 定义数据表字段属性 开始 -->
     <resultMap id="BaseResultMap" type="com.znlccy.media.core.model.Role">
         <id column="id" property="id" jdbcType="BIGINT" />
-        <result column=""
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="description" property="description" jdbcType="VARCHAR" />
+        <result column="role" property="role" jdbcType="VARCHAR" />
+        <result column="weight" property="weight" jdbcType="INTEGER" />
+        <result column="status" property="status" jdbcType="INTEGER" />
+        <result column="type" property="type" jdbcType="INTEGER" />
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
     </resultMap>
     <!-- 定义数据表字段属性 结束 -->
+
+    <!-- 定义返回节本列 开始 -->
+    <sql id="Base_Column_List">
+        id, name, description, role, weight, status, type, create_time, update_time
+    </sql>
+    <!-- 定义返回节本列 结束 -->
+
+    <!-- 添加角色 开始 -->
+    <insert id="saveRole" parameterType="com.znlccy.media.core.model.Role">
+        INSERT INTO
+          tb_role
+        VALUES
+          (#{name}, #{description}, #{role}, #{weight}, #{status}, #{type}, #{create_time}, #{update_time})
+    </insert>
+    <!-- 添加角色 结束 -->
+
+    <!-- 删除角色 开始 -->
+    <delete id="deleteById" parameterType="java.lang.Long">
+        DELETE
+        FROM
+          tb_role
+        WHERE
+          id = #{id}
+    </delete>
+    <!-- 删除角色 结束 -->
+
+    <!-- 更改角色 开始 -->
+    <update id="updateRole" parameterType="com.znlccy.media.core.model.Role">
+      UPDATE
+        tb_role
+      SET
+        name=#{name},description=#{description}, role=#{role}, weight=#{weight}, type=#{type},
+        update_time=#{update_time}
+      WHERE
+        id=#{id}
+    </update>
+    <!-- 更改角色 结束 -->
+
+    <!-- 查询角色 开始 -->
+    <select id="findById" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        SELECT
+          <include refid="Base_Column_List" />
+        FROM
+          tb_role
+        WHERE
+          id=#{id}
+    </select>
+    <!-- 查询角色 结束 -->
 </mapper>
