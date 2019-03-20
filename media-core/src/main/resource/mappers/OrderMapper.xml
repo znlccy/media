@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.znlccy.media.core.mapper.OrderMapper">
+
+    <!-- 定义数据表字段属性 开始 -->
+    <resultMap id="BaseResultMap" type="com.znlccy.media.core.model.Order">
+        <id column="id" property="id" jdbcType="BIGINT" />
+        <result column="order_clerk_number" property="orderClerkNumber" jdbcType="BIGINT" />
+        <result column="advertiser_number" property="advertiserNumber" jdbcType="BIGINT" />
+        <result column="product_id" property="productId" jdbcType="BIGINT" />
+        <result column="expected_up_publish" property="expectedUpPublish" jdbcType="TIMESTAMP" />
+        <result column="expected_down_publish" property="expectedDownPublish" jdbcType="TIMESTAMP" />
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    </resultMap>
+    <!-- 定义数据表字段属性 结束 -->
+
+    <!-- 定义返回基本列 开始 -->
+    <sql id="Base_Column_List">
+        id, order_clerk_number, advertiser_number, product_id, expected_up_publish, expected_down_publish, create_time, update_time
+    </sql>
+    <!-- 定义返回基本列 结束 -->
+
+    <!-- 添加订单 开始 -->
+    <insert id="saveOrder" parameterType="com.znlccy.media.core.model.Order">
+      INSERT
+      INTO
+        tb_order
+      VALUES
+        (#{order_clerk_number}, #{advertiser_number}, #{product_id}, #{expected_up_publish}, #{expected_down_publish}, #{create_Time}, #{update_time})
+    </insert>
+    <!-- 添加订单 结束 -->
+
+    <!-- 删除订单 开始 -->
+    <delete id="deleteById" parameterType="java.lang.Long">
+        DELETE
+        FROM
+          tb_order
+        WHERE
+          id=#{id}
+    </delete>
+    <!-- 删除订单 结束 -->
+
+    <!-- 更改订单 开始 -->
+    <update id="updateOrder" parameterType="com.znlccy.media.core.model.Order">
+      UPDATE
+        tb_order
+      SET
+        order_clerk_number=#{order_clerk_number}, advertiser_number=#{advertiser_number},
+        product_id=#{product_id}, expected_up_publish=#{expected_up_publish},
+        expected_down_publish=#{expected_down_publish}, create_Time=#{create_Time}, update_time=#{update_time}
+      WHERE
+        id=#{id}
+    </update>
+    <!-- 更改订单 结束 -->
+
+    <!-- 查找订单 开始 -->
+    <select id="findById" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        SELECT
+          <include refid="Base_Column_LIst" />
+        FROM
+          tb_order
+        WHERE
+          id=#{id}
+    </select>
+    <!-- 查找订单 结束 -->
+</mapper>
