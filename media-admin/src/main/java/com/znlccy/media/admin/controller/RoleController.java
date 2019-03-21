@@ -1,5 +1,6 @@
 package com.znlccy.media.admin.controller;
 
+import com.znlccy.media.core.controller.BaseController;
 import com.znlccy.media.core.model.Role;
 import com.znlccy.media.core.service.IRoleService;
 import lombok.extern.slf4j.Slf4j;
@@ -21,7 +22,7 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 @RequestMapping(value = "/role")
 @Slf4j
-public class RoleController {
+public class RoleController extends BaseController {
 
     /**
      * 定义路径前缀

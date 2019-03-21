@@ -1,5 +1,6 @@
 package com.znlccy.media.admin.controller;
 
+import com.znlccy.media.core.controller.BaseController;
 import com.znlccy.media.core.model.Resource;
 import com.znlccy.media.core.service.IResourceService;
 import org.springframework.stereotype.Controller;
@@ -18,7 +19,7 @@ import org.springframework.web.bind.annotation.*;
  */
 @Controller
 @RequestMapping(value = "/resource")
-public class ResourceController {
+public class ResourceController extends BaseController {
 
     /**
      * 定义路径前缀

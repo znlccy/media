@@ -41,6 +41,11 @@ public class Product implements Serializable {
     private String position;
 
     /**
+     * 产品状态
+     */
+    private Integer status;
+
+    /**
      * 产品地区
      */
     private String region;
@@ -69,5 +74,15 @@ public class Product implements Serializable {
      * 下架时间
      */
     private Date downTime;
+
+    /**
+     * 创建时间
+     */
+    private Date createTime;
+
+    /**
+     * 更新时间
+     */
+    private Date updateTime;
 
 }

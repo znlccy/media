@@ -2,6 +2,8 @@ package com.znlccy.media.core.dto;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
  * The type UserDTO
  *
@@ -13,12 +15,12 @@ import lombok.Data;
  * 	1.0				chencongye		2019/3/14-17:51			create
  */
 @Data
-public class UserDTO {
+public class UserDTO implements Serializable {
 
     /**
-     * 用户主键
+     * 生成序列号
      */
-    /*private Long id;*/
+    private static final long serialVersionUID = -5928797812230209788L;
 
     /**
      * 用户姓名

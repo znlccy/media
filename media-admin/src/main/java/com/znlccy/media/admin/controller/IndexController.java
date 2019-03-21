@@ -1,5 +1,6 @@
 package com.znlccy.media.admin.controller;
 
+import com.znlccy.media.core.controller.BaseController;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.GetMapping;
  * 	1.0				chencongye		2019/3/12-23:22			create
  */
 @Controller
-public class IndexController {
+public class IndexController extends BaseController {
 
     /**
      *

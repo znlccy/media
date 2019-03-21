@@ -1,5 +1,6 @@
 package com.znlccy.media.admin.controller;
 
+import com.znlccy.media.core.controller.BaseController;
 import com.znlccy.media.core.model.Product;
 import com.znlccy.media.core.service.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,7 @@ import org.springframework.web.bind.annotation.*;
  */
 @Controller
 @RequestMapping(value = "/product")
-public class ProductController {
+public class ProductController extends BaseController {
 
     /**
      * 定义路径前缀
